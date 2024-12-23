@@ -1,0 +1,21 @@
+syntax="proto3";
+option java_package="stub";
+service Salutation{
+  rpc message (stream SalutRequest) returns (SalutResponse);
+}
+service Multiplication{
+  rpc GetMultiplicationTable(MultiplicationRequest)returns (stream  MultiplicatonResponse);
+}
+message MultiplicationRequest{
+  int32 nombre=1;
+  int32 limite=2;
+}
+message MultiplicatonResponse{
+  string resultat=1;
+}
+message SalutRequest{
+  string name=1;
+}
+message SalutResponse{
+  string message=1;
+}
